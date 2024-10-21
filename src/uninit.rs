@@ -27,7 +27,7 @@ pub struct GroundedCell<T> {
     inner: UnsafeCell<MaybeUninit<T>>,
 }
 
-unsafe impl<T: Sync> Sync for GroundedCell<T> {}
+unsafe impl<T> Sync for GroundedCell<T> {}
 
 impl<T: ConstInit> GroundedCell<T> {
     /// Create a new GroundedCell with the cell initialized with
